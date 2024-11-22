@@ -161,3 +161,41 @@ Dans un autre terminal :
   ```
   Retourne l'âge incrémenté de `10`.
 
+
+
+### 5. Pub/Sub
+Utilisé pour l'échange de données en temps réel
+
+#### **Illustration :**
+1. **Ouvrir un deuxième client Redis** :  
+   - Ouvrir un deuxième client
+   - Sur le 2e terminal :
+    - S'abonner à un canal :
+      ```bash
+      SUBSCRIBE canal
+      ```
+    - S'abonner à tous les canaux commençant par "mes*" :
+      ```bash
+      PSUBSCRIBE mes*
+      ```
+   - Sur le 1er terminal :
+    - Publier un message sur tout le canal :
+      ```bash
+      PUBLISH canal "Bienvenue"
+      ```
+    - Publier un message pour un seul client :
+      ```bash
+      PUBLISH user:1234 "Bonjour"
+
+### Utiles
+Visualiser toutes les clefs définies pour une session :
+```bash
+  KEYS *
+```
+Par défaut, redis met à disposition de ses utilisateurs 16 bases de données. Pour changer de base de données :
+```bash
+SELECT numéro_de_base
+```
+
+Reprise sur panne à configurer manuellement.
+
