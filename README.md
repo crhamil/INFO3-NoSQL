@@ -1,3 +1,5 @@
+### Présenté par Chloé Hamilcaro
+
 # NoSQL Partie 1 
 
 Redis est une base de données NoSQL de type clef-valeur. Il est souvent utilisé en complément d'une base relationnelle pour garantir la **persistance des données** (sauvegarde sur disque plutôt que sur la RAM).
