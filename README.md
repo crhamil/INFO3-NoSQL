@@ -169,8 +169,7 @@ Dans un autre terminal :
 Utilisé pour l'échange de données en temps réel
 
 #### **Illustration :**
-1. **Ouvrir un deuxième client Redis** :  
-   - Ouvrir un deuxième client
+1. **Ouvrir un deuxième client Redis** :
    - Sur le 2e terminal :
     - S'abonner à un canal :
       ```bash
@@ -180,7 +179,7 @@ Utilisé pour l'échange de données en temps réel
       ```bash
       PSUBSCRIBE mes*
       ```
-   - Sur le 1er terminal :
+1. **Sur le 1er terminal** :
     - Publier un message sur tout le canal :
       ```bash
       PUBLISH canal "Bienvenue"
