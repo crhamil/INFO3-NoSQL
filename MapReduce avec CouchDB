@@ -1,0 +1,16 @@
+# MapReduce avec CouchDB
+SGBD NoSQL de type document qui contient une API REST.
+
+## Démarrage
+CouchDB écoute par défaut sur le port 5984.  
+On peut installer CouchDB directement ou via Docker. Sur le site de Docker Hub, on a les instructions à suivre pour installer l'image :
+```bash
+  docker run -d --name couchdbdemo -e COUCHDB_USER=youcef -e COUCHDB_PASSWORD=samir -p 5984:5984 couchdb
+```
+CouchDB s'interface avec un **client** ou une **interface graphique**. Attention, il s'agit bien d'une API REST, donc on requête le serveur via le protocole `HTTP` et les méthodes `PUT`, `GET`, `POST`, `DELETE`.
+
+### Création d'une nouvelle base de données
+La création d'une base de données se fait via la méthode PUT. Elle retourne `ok` si l'opération a réussi.
+```bash
+  curl -X PUT http://user:password@localhost:5984/nom_de_base
+```
