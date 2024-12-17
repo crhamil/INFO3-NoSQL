@@ -8,7 +8,8 @@ On peut installer CouchDB directement ou via Docker. Sur le site de Docker Hub, 
   docker run -d --name couchdbdemo -e COUCHDB_USER=youcef -e COUCHDB_PASSWORD=samir -p 5984:5984 couchdb
 ```
 Dans la suite de ce rapport, les commandes sont effectuées pour un SGBD installé via Docker. L'URL peut varier si l'installation a été efectuée directement depuis l'exécutable de CouchDB.  
-CouchDB s'interface avec un **client** ou une **interface graphique**. Attention, il s'agit bien d'une API REST, donc on requête le serveur via le protocole `HTTP` et les méthodes `PUT`, `GET`, `POST`, `DELETE`.
+CouchDB s'interface avec un **client** ou une **interface graphique**. Attention, il s'agit bien d'une API REST, donc on requête le serveur via le protocole `HTTP` et les méthodes `PUT`, `GET`, `POST`, `DELETE`.  
+L'interface graphique se trouve à l'adresse `localhost:5984/_utils`.
 
 ### Création d'une nouvelle base de données
 La création d'une base de données se fait via la méthode PUT. Elle retourne `ok` à la valeur `true` si l'opération a réussi.
