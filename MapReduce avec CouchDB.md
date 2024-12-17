@@ -34,3 +34,19 @@ Manuellement, un document unique :
 ```bash
   curl -X GET http://user:password@localhost:5984/nom_de_base/document_id
 ```
+
+## MapReduce avec CouchDB
+Avec CouchDB, on peut définir la fonction Map puis la fonction Reduce et voir les résultats intermédiaires. Il s'agit d'un des seuls SGBD NoSQL qui permette de faire cela.  
+Prototype `MapReduce (*un* document): émet un ou plusieurs documents`. Cette fonction transforme le document passé en paramètre.  
+### Map
+On peut **paralléliser Map** : Chaque noeud traite un sous ensemble de documents.  
+La fonction Map par défaut n'opère aucune transformation. Il s'agit de la suivante :
+```bash
+  function (document) {
+    emit(null, document);
+  }
+```
+La phase de tri (sort) est effectuée par défaut lors du Map, par ordre croissant de la clef intermédiaire (premier paramètre de la fonction `emit`).  
+
+### Reduce
+La fonction Reduce effectue le regroupement des documents. Elle n'est pas obligatoire pour CouchDB.  
