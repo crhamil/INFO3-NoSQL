@@ -17,11 +17,19 @@ La création d'une base de données se fait via la méthode PUT. Elle retourne `
 ```
 ### Insertion d'un nouveau document
 Sans `document_id`, CouchDB attribue un identifiant de manière automatique.
-Manuellement :
+Manuellement, un document unique :
 ```bash
   curl -X PUT http://user:password@localhost:5984/nom_de_base/document_id -d '{ "clef": "valeur" }'
 ```
-À partir d'un fichier :
+À partir d'un fichier, un document unique :
 ```bash
   curl -X POST http://user:password@localhost:5984/nom_de_base -d @fichier.json -H "Content-Type: application/json"
+```
+À partir d'un fichier, une collection de documents :
+```bash
+  curl -X POST http://user:password@localhost:5984/nom_de_base/_bulk_docs -d @fichier.json -H "Content-Type: application/json"
+```
+### Récupération d'un document
+```bash
+  curl -X GET http://user:password@localhost:5984/nom_de_base/document_id
 ```
